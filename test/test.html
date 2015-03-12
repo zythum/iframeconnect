@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+</head>
+<body>
+	<div>iframe1</div>
+	<iframe name="iframe1" src="http://127.0.0.1/iframeconnect/testiframe.html" frameborder="0" height="500" width="100%"></iframe>
+	<hr>
+	<div>self</div>
+	<textarea id="t" cols="30" rows="10">
+		iframeConnect.connectWith(frames[0]).on('alert', function (msg) {alert(msg + '-1')})
+	</textarea>
+	<button onclick="var t = document.getElementById('t'); eval(t.value); t.value = ''">exec</button>
+	<script src="../iframeconnect.js"></script>
+</body>
+</html>
